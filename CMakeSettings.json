@@ -1,0 +1,27 @@
+{
+  "environments": [
+    {
+      "BUILD_DIR": "${projectDir}\\bin\\bld\\${name}",
+      "OUT_DIR": "${projectDir}\\bin\\${name}",
+      "CMAKE_PREFIX_PATH": "${env.OUT_DIR}"
+    }
+  ],
+  "configurations": [
+    {
+      "name": "Debug",
+      "configurationType": "Debug",
+      "generator": "Ninja",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "buildRoot": "${env.BUILD_DIR}",
+      "installRoot": "${env.OUT_DIR}",
+    },
+    {
+      "name": "Release",
+      "configurationType": "Release",
+      "generator": "Ninja",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "buildRoot": "${env.BUILD_DIR}",
+      "installRoot": "${env.OUT_DIR}",
+    }
+  ]
+}
